@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>595</width>
+    <height>379</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Mapn</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Команда nmap           </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="commandLineEdit"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Цель сканирования</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="ipLineEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="scanPushButton">
+        <property name="text">
+         <string>Сканировать</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="scanTab">
+         <attribute name="title">
+          <string>Сканирование</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>TCP</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="tcpComboBox">
+              <item>
+               <property name="text">
+                <string>Нет</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>SYN (-sS)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>При помощи соединения (-sT)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>FIN (-sF)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ACK (-sA)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Window (-sW)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Мэймона (-sM)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Null (-sN)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Xmass Tree (-sX)</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Не TCP</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="nonTcpComboBox">
+              <item>
+               <property name="text">
+                <string>Нет</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>UDP (-sU)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>IP протокол (-sO)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Ping (-sP)</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Скорость исследования (-T)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="speedSpinBox">
+              <property name="maximum">
+               <number>5</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="OSCheckBox">
+            <property name="text">
+             <string>Определить ОС (-O)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="shortCheckBox">
+            <property name="text">
+             <string>Корокий список портов (-F)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="versionsCheckBox">
+            <property name="text">
+             <string>Определить версии служб (-sV)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pingTab">
+         <attribute name="title">
+          <string>Обнаружение</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="noPingCheckBox">
+            <property name="text">
+             <string>Считать, что все узлы активны (-PN)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="icmpCheckBox">
+            <property name="text">
+             <string>ICMP (-PE)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QCheckBox" name="icmpTimeLableCheckBox">
+            <property name="text">
+             <string>ICMP запросы временной метки (-PP)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QCheckBox" name="icmpNetmaskCheckBox">
+            <property name="text">
+             <string>ICMP запросы маски сети (-PM)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_18">
+            <item>
+             <widget class="QCheckBox" name="ackCheckBox">
+              <property name="text">
+               <string>ACK ping (-PA)      </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="ackLineEdit"/>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_19">
+            <item>
+             <widget class="QCheckBox" name="synCheckBox">
+              <property name="text">
+               <string>SYN ping (-PS)       </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="synLineEdit"/>
+            </item>
+           </layout>
+          </item>
+          <item row="6" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_20">
+            <item>
+             <widget class="QCheckBox" name="udpCheckBox">
+              <property name="text">
+               <string>UDP probes (-PU)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="udpLineEdit"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="otherTab">
+         <attribute name="title">
+          <string>Другое</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QCheckBox" name="verboseCheckBox">
+            <property name="text">
+             <string>Выводить подробную инф (-v)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QCheckBox" name="portsCheckBox">
+              <property name="text">
+               <string>Сканировать порты (-p)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="portsLineEdit"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="outputTab">
+         <attribute name="title">
+          <string>Вывод Nmap</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QTextEdit" name="outputTextEdit"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="portsTab">
+         <attribute name="title">
+          <string>Порты</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QTableWidget" name="outputTableWidget">
+            <column>
+             <property name="text">
+              <string>IP адрес</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Порт</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Протокол</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Состояние</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Сервис</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>595</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="nmapPathAction"/>
+    <addaction name="aboutAuthorAction"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQt">
+   <property name="text">
+    <string>Информация о Qt</string>
+   </property>
+  </action>
+  <action name="helpAction">
+   <property name="text">
+    <string>Справка</string>
+   </property>
+  </action>
+  <action name="aboutAuthorAction">
+   <property name="text">
+    <string>Об авторе</string>
+   </property>
+  </action>
+  <action name="nmapPathAction">
+   <property name="text">
+    <string>Добавить путь к Nmap</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
